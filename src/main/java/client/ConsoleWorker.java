@@ -14,7 +14,7 @@ public class ConsoleWorker {
     }
 
     public void greet() {
-        System.out.println("Добро пожаловать в консольный клиент кафедрального сервера с базой данных студентов!");
+        System.out.println("Welcome to the console client of the server with the students database!!");
     }
 
     protected void listenCommands(DataController dataController) {
@@ -22,7 +22,7 @@ public class ConsoleWorker {
             try {
                 AbstractCommand command = readCommand();
                 if (command == null) {
-                    System.out.println("К сожалению, такой команды нет. Введите одну из существующих команд.");
+                    System.out.println("Unfortunately, there is no such command. Enter one of the existing commands.");
                     continue;
                 }
                 command.execute(dataController);
@@ -34,7 +34,7 @@ public class ConsoleWorker {
     }
 
     private AbstractCommand readCommand() {
-        System.out.println("Введите команду: ");
+        System.out.println("Enter command: ");
         String[] commandLine = SCANNER.nextLine().split(" ");
         String command = commandLine[0];
         String arg = null;
@@ -49,17 +49,17 @@ public class ConsoleWorker {
                 return new ExitCommand();
             case "info":
                 if (arg == null) {
-                    throw new IllegalArgumentException("Это команда требует аргумент! Попробуйте еще раз");
+                    throw new IllegalArgumentException("This command requires an argument! Try again");
                 }
                 return new InfoCommand(arg);
             case "add":
                 if (arg == null) {
-                    throw new IllegalArgumentException("Это команда требует аргумент! Попробуйте еще раз");
+                    throw new IllegalArgumentException("This command requires an argument! Try again");
                 }
                 return new AddCommand(arg);
             case "delete":
                 if (arg == null) {
-                    throw new IllegalArgumentException("Это команда требует аргумент! Попробуйте еще раз");
+                    throw new IllegalArgumentException("This command requires an argument! Try again");
                 }
                 return new DeleteCommand(arg);
             default:

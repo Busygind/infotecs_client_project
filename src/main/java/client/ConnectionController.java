@@ -19,33 +19,33 @@ public class ConnectionController {
     }
 
     protected DataController connectToServer() {
-        System.out.println("Введите IP-адрес сервера: ");
+        System.out.println("Enter server IP-address: ");
         host = scanner.nextLine().split(" ")[0];
-        System.out.println("Введите логин: ");
+        System.out.println("Enter login: ");
         login = scanner.nextLine().split(" ")[0];
-        System.out.println("Введите пароль: ");
+        System.out.println("Enter password: ");
         password = scanner.nextLine().split(" ")[0];
         try {
             ServerRequestsController serverRequestsController = new ServerRequestsController(login, password, host, PORT);
             return new DataController(serverRequestsController);
         } catch (UnknownHostException e) {
-            System.out.println("Неизвестный адрес сервера, попробуйте еще раз");
+            System.out.println("Unknown IP-address, try again");
             return connectToServer();
         } catch (IllegalArgumentException e) {
-            System.out.println("Логин или пароль указаны неверно или присутствуют недопустимые символы, попробуйте еще раз");
+            System.out.println("Login or password is incorrect, try again");
             return connectToServer();
         } catch (MalformedURLException e) {
-            System.out.println("Адрес сервера указан некорректно, попробуйте еще раз");
+            System.out.println("Server address is incorrect, try again");
             return connectToServer();
         }  catch (NullPointerException e) {
-            System.out.println("Ошибка подключения, попробуйте еще раз");
+            System.out.println("Connection error, try again");
             return connectToServer();
         } catch (FileNotFoundException e) {
-            System.out.println("Файла с именем \"students.json\" нет на указанном сервере. "
-                    + "Проверьте содержимое хранилища сервера. Соединение разорвано.");
+            System.out.println("The file named \"students.json\" is not on the specified server. "
+                                       + "Check the contents of the server storage. The connection is broken.");
             return connectToServer();
         } catch (IOException e) {
-            System.out.println("Пароль указан неверно или пуст, попробуйте еще раз");
+            System.out.println("The password is wrong or empty, try again");
             return connectToServer();
         }
     }

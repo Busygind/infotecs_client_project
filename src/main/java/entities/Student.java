@@ -1,6 +1,7 @@
 package entities;
 
 public class Student implements Comparable<Student> {
+
     private final Long id;
     private final String name;
 

@@ -6,6 +6,6 @@ public class ExitCommand extends AbstractCommand {
 
     @Override
     public void execute(DataController dataController) {
-        System.out.println("Работа с сервером завершена. Измененные данные сохранены.");
+        System.out.println("The work with server is finished. The changed data is saved.");
     }
 }

@@ -61,7 +61,7 @@ public class ServerRequestsController {
             inputStream.close();
             outputStream.close();
 
-            System.out.println("Успешно!");
+            System.out.println("Success!");
         } catch (IOException ex) {
             //todo
             ex.printStackTrace();
