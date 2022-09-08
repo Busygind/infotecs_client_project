@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="infotecs_client_project:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/infotecs_client_project_jar</output-path>
+    <root id="archive" name="infotecs_client_project.jar">
+      <element id="module-output" name="infotecs_client_project" />
+    </root>
+  </artifact>
+</component>
