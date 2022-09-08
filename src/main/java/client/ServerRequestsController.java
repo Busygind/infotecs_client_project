@@ -63,6 +63,7 @@ public class ServerRequestsController {
 
             System.out.println("Успешно!");
         } catch (IOException ex) {
+            //todo
             ex.printStackTrace();
         }
     }

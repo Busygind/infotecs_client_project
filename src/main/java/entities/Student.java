@@ -1,8 +1,8 @@
 package entities;
 
 public class Student implements Comparable<Student> {
-    private Long id;
-    private String name;
+    private final Long id;
+    private final String name;
 
     public Student(long id, String name) {
         this.id = id;
@@ -13,7 +13,6 @@ public class Student implements Comparable<Student> {
         return id;
     }
 
-    //todo реализовать сортировку
     @Override
     public int compareTo(Student o) {
         int result = this.name.compareTo(o.name);
