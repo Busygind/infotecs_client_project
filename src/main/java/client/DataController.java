@@ -43,7 +43,7 @@ public class DataController {
         students.add(student);
     }
 
-    protected ServerRequestsController getConnection() {
+    protected ServerRequestsController getServerController() {
         return serverRequestsController;
     }
 }

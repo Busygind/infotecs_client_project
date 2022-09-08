@@ -17,7 +17,7 @@ public class ConsoleWorker {
         System.out.println("ƒобро пожаловать в консольный клиент кафедрального сервера с базой данных студентов!");
     }
 
-    public void listenCommands(DataController dataController) {
+    protected void listenCommands(DataController dataController) {
         while (isRunning) {
             try {
                 AbstractCommand command = readCommand();
@@ -26,7 +26,7 @@ public class ConsoleWorker {
                     continue;
                 }
                 command.execute(dataController);
-                dataController.getConnection().saveData(dataController.getStudents());
+                dataController.getServerController().saveData(dataController.getStudents());
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
@@ -66,5 +66,4 @@ public class ConsoleWorker {
                 return null;
         }
     }
-
 }
