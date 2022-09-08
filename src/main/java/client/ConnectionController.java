@@ -1,8 +1,5 @@
 package client;
 
-import sun.net.ftp.FtpLoginException;
-import sun.net.ftp.FtpProtocolException;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -33,9 +30,6 @@ public class ConnectionController {
             return new DataController(serverRequestsController);
         } catch (UnknownHostException e) {
             System.out.println("Неизвестный адрес сервера, попробуйте еще раз");
-            return connectToServer();
-        } catch (FtpLoginException e) {
-            System.out.println("Неверный логин или пароль, попробуйте еще раз");
             return connectToServer();
         } catch (IllegalArgumentException e) {
             System.out.println("Логин или пароль указаны неверно или присутствуют недопустимые символы, попробуйте еще раз");
