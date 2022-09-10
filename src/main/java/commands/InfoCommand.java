@@ -1,6 +1,6 @@
 package commands;
 
-import client.DataController;
+import utils.DataController;
 
 public class InfoCommand extends AbstractCommand {
 

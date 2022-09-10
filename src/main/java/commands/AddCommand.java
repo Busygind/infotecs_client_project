@@ -1,6 +1,6 @@
 package commands;
 
-import client.DataController;
+import utils.DataController;
 import entities.Student;
 
 public class AddCommand extends AbstractCommand {
