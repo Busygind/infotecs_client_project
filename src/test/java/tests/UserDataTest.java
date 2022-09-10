@@ -12,22 +12,22 @@ public class UserDataTest {
 
     @DataProvider(name = "incorrect host")
     public static Object[][] createDataWithIncorrectHost() {
-        return new Object[][] {
-                new Object[] { "Dmitryb", "Karambola02032003", "incorrectHost" }
+        return new Object[][]{
+                new Object[]{"Dmitryb", "Karambola02032003", "incorrectHost"}
         };
     }
 
     @DataProvider(name = "incorrect password")
     public static Object[][] createDataWithIncorrectPassword() {
-        return new Object[][] {
-                new Object[] { "Dmitryb", "incorrectPassword", "localhost" }
+        return new Object[][]{
+                new Object[]{"Dmitryb", "incorrectPassword", "localhost"}
         };
     }
 
     @DataProvider(name = "incorrect login")
     public static Object[][] createDataWithEmptyLogin() {
-        return new Object[][] {
-                new Object[] { "", "Karambola02032003", "localhost" }
+        return new Object[][]{
+                new Object[]{"", "Karambola02032003", "localhost"}
         };
     }
 

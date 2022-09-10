@@ -7,6 +7,7 @@ import utils.DataController;
 import java.util.Objects;
 
 public class App {
+
     public static void main(String[] args) {
 
         ConnectionController cc = new ConnectionController();
