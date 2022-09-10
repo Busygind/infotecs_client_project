@@ -1,6 +1,8 @@
-package client;
+package utils;
 
 import entities.Student;
+import utils.JSONParser;
+import utils.ServerRequestsController;
 
 import java.io.IOException;
 import java.util.HashSet;

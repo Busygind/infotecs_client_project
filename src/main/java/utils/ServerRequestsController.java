@@ -1,8 +1,9 @@
-package client;
+package utils;
 
 import entities.Student;
 
 import java.io.*;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
@@ -34,7 +35,7 @@ public class ServerRequestsController {
                 .lines().collect(Collectors.joining("\n"));
     }
 
-    public void saveData(HashSet<Student> students) {
+    public ConnectionStatus saveData(HashSet<Student> students) {
         try {
             URL url = new URL(path);
             StringBuilder dataToUpload = new StringBuilder();
@@ -47,8 +48,8 @@ public class ServerRequestsController {
             dataToUpload.append("\n]\n}");
 
             /*
-            File uploading
-             */
+                File uploading
+            */
             URLConnection conn = url.openConnection();
             OutputStream outputStream = conn.getOutputStream();
             InputStream inputStream = new ByteArrayInputStream(dataToUpload.toString().getBytes(StandardCharsets.UTF_8));
@@ -61,12 +62,13 @@ public class ServerRequestsController {
             inputStream.close();
             outputStream.close();
 
-            System.out.println("Success!");
-        } catch (IOException ex) {
-            //todo
-            ex.printStackTrace();
+            System.out.println(ConnectionStatus.SUCCESS);
+            return ConnectionStatus.SUCCESS;
+        } catch (IOException e) {
+            System.out.println("Server closed, connection lost");
+            return ConnectionStatus.MALFORMED_HOST;
         }
-    }
 
+    }
 
 }

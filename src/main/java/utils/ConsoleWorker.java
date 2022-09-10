@@ -1,7 +1,10 @@
-package client;
+package utils;
 
 import commands.*;
+import utils.DataController;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.Scanner;
 
 public class ConsoleWorker {
@@ -17,7 +20,7 @@ public class ConsoleWorker {
         System.out.println("Welcome to the console client of the server with the students database!!");
     }
 
-    protected void listenCommands(DataController dataController) {
+    public void listenCommands(DataController dataController) {
         while (isRunning) {
             try {
                 AbstractCommand command = readCommand();
