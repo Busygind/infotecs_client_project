@@ -62,7 +62,7 @@ public class ServerRequestsController {
             inputStream.close();
             outputStream.close();
 
-            System.out.println(ConnectionStatus.SUCCESS);
+            System.out.println(ConnectionStatus.SUCCESS.getMessage());
             return ConnectionStatus.SUCCESS;
         } catch (IOException e) {
             System.out.println("Server closed, connection lost");
