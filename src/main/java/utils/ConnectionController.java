@@ -12,15 +12,13 @@ public class ConnectionController {
     private static final Scanner scanner = new Scanner(System.in);
     private DataController dataController;
 
-    public ConnectionController() {
-
-    }
-
     public DataController getDataController() {
         return dataController;
     }
 
     /**
+     * Method that handling all exceptions during connection
+     *
      * @param login    user login to connect
      * @param password user password to connect
      * @param host     server hostname
@@ -33,6 +31,8 @@ public class ConnectionController {
             return ConnectionStatus.SUCCESS;
         } catch (UnknownHostException e) {
             return ConnectionStatus.UNKNOWN_HOST;
+        } catch (NumberFormatException e) {
+            return ConnectionStatus.INCORRECT_DATA_IN_FILE;
         } catch (IllegalArgumentException e) {
             return ConnectionStatus.INCORRECT_LOGIN;
         } catch (MalformedURLException e) {
@@ -60,6 +60,5 @@ public class ConnectionController {
         String password = scanner.nextLine().split(" ")[0];
 
         return connectToServer(login, password, host);
-
     }
 }

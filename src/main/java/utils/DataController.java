@@ -29,6 +29,11 @@ public class DataController {
         students.remove(getStudentById(id));
     }
 
+    /**
+     * Generation unique id method
+     *
+     * @return unique id
+     */
     public Long generateId() {
         for (long i = 1; i < Long.MAX_VALUE; i++) {
             long finalI = i;

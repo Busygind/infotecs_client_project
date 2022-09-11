@@ -1,9 +1,9 @@
 package tests;
 
-import utils.ConnectionController;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import utils.ConnectionController;
 import utils.ConnectionStatus;
 import utils.DataToConnect;
 
@@ -46,7 +46,7 @@ public class UserDataTest {
      * @param password user password to connect
      * @param host     server hostname
      */
-    @Test(description = "Test of system behavior in case that host is incorrect", dataProvider = "incorrect host", suiteName = "UserDataChecking")
+    @Test(description = "Test of system behavior in case that host is incorrect", dataProvider = "incorrect host")
     public void IncorrectHostTest(String login, String password, String host) {
         Assert.assertEquals(CONNECTION_CONTROLLER.connectToServer(login, password, host), ConnectionStatus.UNKNOWN_HOST);
     }
@@ -56,7 +56,7 @@ public class UserDataTest {
      * @param password user password to connect
      * @param host     server hostname
      */
-    @Test(description = "Test of system behavior in case that password is incorrect", dataProvider = "incorrect password", suiteName = "UserDataChecking")
+    @Test(description = "Test of system behavior in case that password is incorrect", dataProvider = "incorrect password")
     public void IncorrectPasswordTest(String login, String password, String host) {
         Assert.assertEquals(CONNECTION_CONTROLLER.connectToServer(login, password, host), ConnectionStatus.WRONG_PASSWORD);
     }
@@ -66,9 +66,8 @@ public class UserDataTest {
      * @param password user password to connect
      * @param host     server hostname
      */
-    @Test(description = "Test of system behavior in case that login is empty or incorrect", dataProvider = "incorrect login", suiteName = "UserDataChecking")
+    @Test(description = "Test of system behavior in case that login is empty or incorrect", dataProvider = "incorrect login")
     public void EmptyLoginTest(String login, String password, String host) {
         Assert.assertEquals(CONNECTION_CONTROLLER.connectToServer(login, password, host), ConnectionStatus.INCORRECT_LOGIN);
     }
-
 }
