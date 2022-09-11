@@ -93,3 +93,9 @@
 3. Запустить test-suite
 
 Второй вариант:
+1. Скачать исполняемый [jar-файл](https://github.com/Busygind/infotecs_client_project/tree/main/out/artifacts/test_jar) с тестами и файл сьюта [testng.xml](https://github.com/Busygind/infotecs_client_project/tree/main/src/test/resources) и поместить их в одну директорию
+2. Перейти в эту директорию и запустить jar-файл, указав аргументом имя сьюта:
+
+`java -jar tests.jar testng.xml`
+
+
