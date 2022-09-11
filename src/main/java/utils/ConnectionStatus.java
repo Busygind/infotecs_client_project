@@ -1,7 +1,9 @@
 package utils;
 
+/**
+ * Enum with possible connection statuses and their info messages
+ */
 public enum ConnectionStatus {
-
     SUCCESS("Success!"),
     UNKNOWN_HOST("Unknown IP-address, try again"),
     INCORRECT_LOGIN("Login or password is incorrect, try again"),

@@ -1,10 +1,7 @@
 package utils;
 
 import commands.*;
-import utils.DataController;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.Scanner;
 
 public class ConsoleWorker {
@@ -17,9 +14,14 @@ public class ConsoleWorker {
     }
 
     public void greet() {
-        System.out.println("Welcome to the console client of the server with the students database!!");
+        System.out.println("Welcome to the console client to work with the students database!");
     }
 
+    /**
+     * Method that listen commands from console until the command is called
+     *
+     * @param dataController data controller used to save and update data
+     */
     public void listenCommands(DataController dataController) {
         while (isRunning) {
             try {

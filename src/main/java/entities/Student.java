@@ -14,6 +14,10 @@ public class Student implements Comparable<Student> {
         return id;
     }
 
+    /**
+     * @param o object to compare
+     * @return comparing result as integer
+     */
     @Override
     public int compareTo(Student o) {
         int result = this.name.compareTo(o.name);
@@ -23,6 +27,10 @@ public class Student implements Comparable<Student> {
         return result;
     }
 
+    /**
+     * Method that translate object to JSON string
+     * @return JSON object as string
+     */
     public String toJSONObject() {
         return "\n{\n"
                 + "\"id\": " + id + ",\n"
@@ -30,6 +38,10 @@ public class Student implements Comparable<Student> {
                 + "},";
     }
 
+    /**
+     * Method to show students in presentable format
+     * @return object representation as a string
+     */
     @Override
     public String toString() {
         return "-------------------------\n"

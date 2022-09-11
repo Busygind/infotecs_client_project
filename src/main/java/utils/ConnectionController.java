@@ -1,9 +1,5 @@
 package utils;
 
-import utils.ConnectionStatus;
-import utils.DataController;
-import utils.ServerRequestsController;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -24,6 +20,12 @@ public class ConnectionController {
         return dataController;
     }
 
+    /**
+     * @param login    user login to connect
+     * @param password user password to connect
+     * @param host     server hostname
+     * @return connection status as an object
+     */
     public ConnectionStatus connectToServer(String login, String password, String host) {
         try {
             ServerRequestsController serverRequestsController = new ServerRequestsController(login, password, host, PORT);
@@ -44,6 +46,11 @@ public class ConnectionController {
         }
     }
 
+    /**
+     * Method to recursive invoking connect method
+     *
+     * @return connection status which is getting from connect method
+     */
     public ConnectionStatus getUserDataAndConnect() {
         System.out.println("Enter server IP-address: ");
         String host = scanner.nextLine().split(" ")[0];
