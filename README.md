@@ -69,9 +69,11 @@
 2. В терминале перейти в директорию main/java/ и скомпилировать java-классы (для удобства в директорию out): 
 
 ` javac -classpath . App.java commands/*.java entities/*.java utils/*.java -d ../../../out`
+
 3. Перейти в директорию out/ и объединить классы в исполняемый jar-файл:
 
 `jar cvfe client.jar App *.class */*.class`
+
 4. Проверить работоспособность jar-файла:
 
 `java -jar client.jar`
