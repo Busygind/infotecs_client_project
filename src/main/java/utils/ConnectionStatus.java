@@ -6,6 +6,7 @@ package utils;
 public enum ConnectionStatus {
     SUCCESS("Success!"),
     UNKNOWN_HOST("Unknown IP-address, try again"),
+    INCORRECT_DATA_IN_FILE("Data in file on server can not be parsed"),
     INCORRECT_LOGIN("Login or password is incorrect, try again"),
     MALFORMED_HOST("Server address is incorrect, try again"),
     FILE_NOT_FOUND("The file named \"students.json\" is not on the specified server. "

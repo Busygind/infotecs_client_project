@@ -56,7 +56,6 @@ public class ServerRequestsController {
             System.out.println(ConnectionStatus.SUCCESS.getMessage());
             return ConnectionStatus.SUCCESS;
         } catch (IOException e) {
-            System.out.println("Server closed, connection lost");
             return ConnectionStatus.MALFORMED_HOST;
         }
 

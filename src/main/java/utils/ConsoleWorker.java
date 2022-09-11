@@ -31,9 +31,13 @@ public class ConsoleWorker {
                     continue;
                 }
                 command.execute(dataController);
-                dataController.getServerController().saveData(dataController.getStudents());
+                if (dataController.getServerController().saveData(dataController.getStudents()).equals(ConnectionStatus.MALFORMED_HOST)) {
+                    isRunning = false;
+                    System.out.println("Server closed, connection lost");
+                }
+
             } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
+                System.out.println("Argument is incorrect or empty!");
             }
         }
     }
@@ -54,17 +58,17 @@ public class ConsoleWorker {
                 return new ExitCommand();
             case "info":
                 if (arg == null) {
-                    throw new IllegalArgumentException("This command requires an argument! Try again");
+                    throw new IllegalArgumentException();
                 }
                 return new InfoCommand(arg);
             case "add":
                 if (arg == null) {
-                    throw new IllegalArgumentException("This command requires an argument! Try again");
+                    throw new IllegalArgumentException();
                 }
                 return new AddCommand(arg);
             case "delete":
                 if (arg == null) {
-                    throw new IllegalArgumentException("This command requires an argument! Try again");
+                    throw new IllegalArgumentException();
                 }
                 return new DeleteCommand(arg);
             default:
