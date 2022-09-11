@@ -51,9 +51,9 @@ public class FileCheckTest {
      * @param pass  user password
      * @param host  server hostname
      */
-    //У меня имеется доступ только к одному серверу, и если на нем удалить необходимый файл, то не пройдут все остальные тесты.
-    //Поэтому, для всего test-suite прошу считать этот тест невалидным. Но при желании его можно запустить и проверить на пустом сервере,
-    //чтобы убедиться, что системой этот вариант обрабатывается
+    // У меня имеется доступ только к одному серверу, и если на нем удалить необходимый файл, то не пройдут все остальные тесты.
+    // Поэтому, для всего test-suite прошу считать этот тест невалидным. Но при желании его можно запустить и проверить на пустом сервере,
+    // чтобы убедиться, что системой этот вариант обрабатывается
     @Ignore
     @Test(description = "test that indicate that file with desire name is not found", dataProvider = "data to connect to server without desire file")
     public void fileDoesNotExistCheck(String login, String pass, String host) {
