@@ -6,6 +6,9 @@ import utils.DataController;
 
 import java.util.Objects;
 
+/**
+ * Main class that run client
+ */
 public class App {
 
     public static void main(String[] args) {

@@ -15,7 +15,7 @@ public class DeleteCommand extends AbstractCommand {
         try {
             dataController.removeStudentById(Long.parseLong(getArg()));
         } catch (NoSuchElementException e) {
-            System.out.println("�������� � ����� id �� ����������.");
+            System.out.println("Student with that id not found.");
         }
 
     }

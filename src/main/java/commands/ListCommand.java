@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ListCommand extends AbstractCommand{
+public class ListCommand extends AbstractCommand {
 
     @Override
     public void execute(DataController dataController) {

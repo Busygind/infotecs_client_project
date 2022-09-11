@@ -5,9 +5,10 @@ import entities.Student;
 import java.util.HashSet;
 
 public class JSONParser {
+
     public HashSet<Student> parseData(String data) {
         HashSet<Student> students = new HashSet<>();
-        data = data.replaceAll("\\s+","");
+        data = data.replaceAll("\\s+", "");
         int idIndex = data.indexOf("\"id\":");
         int nameIndex;
         int closeBracketIndex;

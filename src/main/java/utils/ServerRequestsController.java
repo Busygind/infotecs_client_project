@@ -3,7 +3,6 @@ package utils;
 import entities.Student;
 
 import java.io.*;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
@@ -13,17 +12,9 @@ import java.util.stream.Collectors;
 public class ServerRequestsController {
 
     private static final String FILENAME = "students.json";
-    private final String login;
-    private final String pass;
-    private final String host;
     private final String path;
-    private final int port;
 
     public ServerRequestsController(String login, String pass, String host, int port) {
-        this.login = login;
-        this.pass = pass;
-        this.host = host;
-        this.port = port;
         this.path = "ftp://" + login + ":" + pass + "@" + host + "/" + FILENAME + ";type=i";
     }
 

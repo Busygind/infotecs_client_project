@@ -1,8 +1,6 @@
 package utils;
 
 import entities.Student;
-import utils.JSONParser;
-import utils.ServerRequestsController;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -10,8 +8,8 @@ import java.util.Objects;
 
 public class DataController {
 
-    private ServerRequestsController serverRequestsController;
-    private HashSet<Student> students;
+    private final ServerRequestsController serverRequestsController;
+    private final HashSet<Student> students;
 
     public DataController(ServerRequestsController serverRequestsController) throws IOException {
         JSONParser parser = new JSONParser();

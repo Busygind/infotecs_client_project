@@ -35,7 +35,7 @@ public class ConnectionController {
             return ConnectionStatus.INCORRECT_LOGIN;
         } catch (MalformedURLException e) {
             return ConnectionStatus.MALFORMED_HOST;
-        }  catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             return ConnectionStatus.NULL_POINTER;
         } catch (FileNotFoundException e) {
             return ConnectionStatus.FILE_NOT_FOUND;

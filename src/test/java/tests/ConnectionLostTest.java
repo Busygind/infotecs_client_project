@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utils.ConnectionStatus;
+import utils.DataToConnect;
 import utils.ServerRequestsController;
 
 import java.util.HashSet;
@@ -11,7 +12,7 @@ import java.util.HashSet;
 public class ConnectionLostTest {
 
     private static final ServerRequestsController SERVER_REQUESTS_CONTROLLER =
-            new ServerRequestsController("Dmitryb", "Karambola02032003", "disabledHost", 21);
+            new ServerRequestsController(DataToConnect.LOGIN.getValue(), DataToConnect.PASSWORD.getValue(), "disabledHost", 21);
 
     @BeforeTest
     public void connectToServer() {
