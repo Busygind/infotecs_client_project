@@ -2,6 +2,7 @@ package utils;
 
 import commands.*;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class ConsoleWorker {
@@ -38,6 +39,8 @@ public class ConsoleWorker {
 
             } catch (IllegalArgumentException e) {
                 System.out.println("Argument is incorrect or empty!");
+            } catch (NoSuchElementException e) {
+                System.out.println("Student with that id not found");
             }
         }
     }
