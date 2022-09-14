@@ -20,7 +20,7 @@ public class ConnectionLostTest {
     }
 
     // Для теста попробуем отправить запрос на несуществующий сервер, это будет равносильно выключению текущего сервера
-    @Test(description = "test system on sending data to disabled server")
+    @Test(description = "Test system on sending data to disabled server")
     public void sendDataToDisabledServer() {
         Assert.assertEquals(SERVER_REQUESTS_CONTROLLER.saveData(new HashSet<>()), ConnectionStatus.MALFORMED_HOST);
     }

@@ -8,6 +8,9 @@ import java.util.Scanner;
 
 public class ConnectionController {
 
+    /**
+     * Default server port
+     */
     private static final int PORT = 21;
     private static final Scanner scanner = new Scanner(System.in);
     private DataController dataController;

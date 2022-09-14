@@ -3,6 +3,9 @@ import org.testng.collections.Lists;
 
 import java.util.List;
 
+/**
+ * Class to init test-suite
+ */
 public class Main {
     public static void main(String[] args) {
         TestNG testNG = new TestNG();

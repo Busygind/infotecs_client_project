@@ -3,7 +3,7 @@ package utils;
 public enum DataToConnect {
     LOGIN("Dmitryb"),
     PASSWORD("Karambola02032003"),
-    HOST("localhost");
+    HOST("192.168.0.108");
 
     private final String value;
 
