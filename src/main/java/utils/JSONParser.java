@@ -15,7 +15,12 @@ public class JSONParser {
         while (idIndex != -1) {
             nameIndex = data.indexOf("\"name\":");
             closeBracketIndex = data.indexOf("}");
-            Student student = new Student(Long.parseLong(data.substring(idIndex + 5, nameIndex - 1)), data.substring(nameIndex + 8, closeBracketIndex - 1));
+            long id = Long.parseLong(data.substring(idIndex + 5, nameIndex - 1));
+            String name = data.substring(nameIndex + 8, closeBracketIndex - 1);
+            if (name.contains("\"name\"") || name.contains("\"id\"") || name.contains("}")) {
+                throw new NumberFormatException();
+            }
+            Student student = new Student(id, name);
             students.add(student);
             data = data.substring(closeBracketIndex + 1);
             idIndex = data.indexOf("\"id\":");
